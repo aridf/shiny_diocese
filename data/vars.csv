@@ -1,0 +1,85 @@
+﻿var,grouping,name
+yrsusa_tot,Years in USA,Years in USA
+yrsusa_catp1,Years in USA (Categories),Less than 5 years
+yrsusa_catp2,Years in USA (Categories),5 to 9 years
+yrsusa_catp3,Years in USA (Categories),10 to 14 years
+yrsusa_catp4,Years in USA (Categories),15 to 19 years
+yrsusa_catp5,Years in USA (Categories),20 years and over
+age_tot,Age,Total respondents
+age_catp1,Age (Categories),Under 5
+age_catp2,Age (Categories),5 to 17
+age_catp3,Age (Categories),18 to 20
+age_catp4,Age (Categories),25 to 34
+age_catp5,Age (Categories),35 to 44
+age_catp6,Age (Categories),45 to 64
+age_catp7,Age (Categories),65 and over
+cit_tot,Citizenship,Total respondents
+cit_catp1,Citizenship,US-born citizen
+cit_catp2,Citizenship,Naturalized citizen
+cit_catp3,Citizenship,Not a citizen
+citech_cat,Technology Access,Access to internet
+male,Gender,Male
+female,Gender,Female
+marst_tot,Marital Status,Married
+marst_catp1,Marital Status,Married to American
+marst_catp2,Marital Status,Married to legal noncitizen
+marst_catp3,Marital Status,Married to unauthorized
+speakeng_tot,English Ability,Is 5 and over
+speakeng_catp1,English Ability,Does not speak English
+speakeng_catp2,English Ability,Speaks English a little
+speakeng_catp3,English Ability,Speaks English well
+speakeng_catp4,English Ability,Speaks Englis very well or only English
+school_tot,School Enrollment,Total 3 and over
+school_catp1,School Enrollment,Enrolled in school
+school_catp2,School Enrollment,Not enrolled in school
+educ_tot,Educational Attainment,Educational Attainment
+educ_catp1,Educational Attainment (Category),Less than high school
+educ_catp2,Educational Attainment (Category),High school
+educ_catp3,Educational Attainment (Category),Some college
+educ_catp4,Educational Attainment (Category),B.A. or higher
+citech_tot,Technology Access,Access to any computer technology
+citech_catp1,Technology Access,Access to computer
+citech_catp2,Technology Access,Access to internet
+citech_catp3,Technology Access,Access to both
+hcovany_cat,Insurance Coverage,Has insurance coverage
+medicaid,Medicaid,Is receiving Medicaid
+empstat_tot,Employment,Age 16 and over
+empstat_catp1,Employment,Employed
+empstat_catp2,Employment,Unemployed
+empstat_catp3,Employment,Not in the labor force
+self,Employment,Self-employed
+poverty_tot,Poverty,Poverty status non-missing
+poverty_catp1,Poverty,Above poverty threshold
+poverty_catp2,Poverty,Below poverty threshold
+inctot2,Poverty,Total personal income (nominal) of age 16 and over
+skilled_occ,Occupation,Works in a skilled occupation
+occ_catp1,Occupation,"Management, business and financial"
+occ_catp2,Occupation,"Computer, mathematical, science and engineering"
+occ_catp3,Occupation,"Social services, legal, education, arts and design"
+occ_catp4,Occupation,Healthcare
+occ_catp5,Occupation,Food preparation and serving
+occ_catp6,Occupation,Building and grounds cleaning
+occ_catp7,Occupation,Personal care and services
+occ_catp8,Occupation,Sales and related
+occ_catp9,Occupation,Office and administrative support
+occ_catp10,Occupation,Construction
+occ_catp11,Occupation,Production
+occ_catp12,Occupation,Transportation and material moving
+occ_catp13,Occupation,Military specific
+ind_catp1,Industry,Construction
+ind_catp2,Industry,Restaurants and other food services
+ind_catp3,Industry,Landscaping services
+ind_catp4,Industry,Services to buildings and dwellings
+ind_catp5,Industry,Crop production
+ind_catp6,Industry,Private households
+ind_catp7,Industry,Traveller accommodations
+ind_catp8,Industry,Grocery stores
+ind_catp9,Industry,Computer systems design and related services
+ind_catp10,Industry,Hospitals
+ind_catp11,Industry,Child day care services
+ind_catp12,Industry,Department stores and discount stores
+ind_catp13,Industry,"Colleges, universities and professional schools"
+ind_catp14,Industry,Elementary and secondary schools
+ind_catp15,Industry,All other
+mortgage1,Mortage,Lives in a mortaged home
+mortgage_owned,Mortage,Lives in a home that is owned free and clear

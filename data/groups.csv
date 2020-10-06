@@ -1,0 +1,15 @@
+﻿group_name,group_id
+African Immigrants,african
+Brazilian Immigrants,brazilian
+Haitian and Caribbean Immigrants,caribbean
+European Immigrants,european
+Victims of Forced Migration,refugee
+Children of African Immigrants,afr_child
+Children of Brazilian Immigrants,braz_child
+Children of Haitian and Caribbean Immigrants,carib_child
+Children of European Immigrants,euro_child
+Children of Forced Migrants,ref_child
+Peoples of the Sea,seapeople
+Migrant Farmworkers,migfrmwkr
+Civil Aviation Employees,civaviation
+Traveling Shows Ministries,travelshow
