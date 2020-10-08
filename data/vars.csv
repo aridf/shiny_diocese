@@ -32,7 +32,7 @@ speakeng_catp4,Level of English Proficiency,Speaks English very well or only Eng
 school_tot,School Enrollment,"Total, age 3 and over"
 school_catp1,School Enrollment,Enrolled in school
 school_catp2,School Enrollment,Not enrolled in school
-educ_tot,Educational Attainment,Educational Attainment
+educ_tot,Educational Attainment,Total
 educ_catp1,Educational Attainment,Less than high school
 educ_catp2,Educational Attainment,High school
 educ_catp3,Educational Attainment,Some college
@@ -52,7 +52,7 @@ poverty_tot,Poverty,Total
 poverty_catp1,Poverty,Above poverty threshold
 poverty_catp2,Poverty,Below poverty threshold
 inctot2,Income,Total personal income (nominal) of age 16 and over
-skilled_occ,Occupation,Works in a skilled occupation
+skilled_occ,Skilled Occupation,Works in a skilled occupation
 occ_catp1,Occupation,"Management, business and financial"
 occ_catp2,Occupation,"Computer, mathematical, science and engineering"
 occ_catp3,Occupation,"Social services, legal, education, arts and design"
