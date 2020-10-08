@@ -1,11 +1,14 @@
 
 library(tidyverse)
 library(readxl)
+library(visdat)
 library(stringi)
 
 data <- read_excel("data/USCCB.xlsx")
 grp <- read_csv("data/groups.csv")
 vars <- read_csv("data/vars.csv")
+
+vis_miss(ldata)
 
 names(data) <- gsub("_child", "child", names(data))
 names(data) <- stri_replace_last_fixed(names(data), "_", "-")
@@ -16,8 +19,7 @@ ldata <- data %>%
     cols = -`diocese-num`,
     names_to = c(".value", "group_id"),
     names_sep = ("-")
-  ) %>% 
-  mutate(across(everything(), ~replace_na(.x, -1))) %>%
+  ) %>%
   rename("diocese" = "diocese-num")
 
 saveRDS(ldata, "data/long_data.RDS")
