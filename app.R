@@ -8,7 +8,7 @@ data <- readRDS("data/long_data.RDS")
 group_lookup <- read_csv("data/groups.csv")
 vars <- read_csv("data/vars.csv")
 
-ui <- fluidPage(theme = shinytheme("slate"),
+ui <- fluidPage(theme = shinytheme("readable"),
   titlePanel(
     h1("Title", align = "center")
   ),
@@ -29,15 +29,16 @@ ui <- fluidPage(theme = shinytheme("slate"),
           )
   ),
   fluidRow(
-    column(4, offset = 2, selectInput("dio", "Diocese", data$diocese, data$diocese)),
-    column(4, offset = -2,
+    column(4, offset = 1, selectInput("dio", "Diocese", data$diocese, data$diocese)),
+    column(4, offset = -1,
       selectInput(
         "group", 
         "Group",
         setNames(group_lookup$group_id, group_lookup$group_name),
         multiple = TRUE
       )
-    )
+    ),
+    column(2, downloadButton("downloadData", "Download Data"))
   ),
   fluidRow(
     br(),
@@ -76,5 +77,16 @@ server <- function(input, output, session) {
       selected()
     }, digits = 0
   )
+  
+  # Downloadable csv of selected dataset ----
+  output$downloadData <- downloadHandler(
+    filename = function() {
+      paste(input$dio, ".csv", sep = "")
+    },
+    content = function(file) {
+      write.csv(selected(), file, row.names = TRUE)
+    }
+  )
+  
 }
 shinyApp(ui, server)
