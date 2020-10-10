@@ -6,6 +6,7 @@ suppressPackageStartupMessages({
 
 data <- readRDS("data/long_data.RDS")
 group_lookup <- read_csv("data/groups.csv")
+group_descs <- read_csv("data/group_descs.csv")
 vars <- read_csv("data/vars.csv")
 
 ui <- fluidPage(
@@ -31,7 +32,24 @@ ui <- fluidPage(
       #occ_tbl tr:first-child { font-weight: normal }
       #ind_tbl tr:first-child { font-weight: normal }
       #mor_tbl tr:first-child { font-weight: normal }
-                    
+      #group_descriptions tr:first-child { font-weight: normal }
+      
+      #group_descriptions caption {
+        color: white;
+        font-size: 26px
+      }              
+      
+      #group_descriptions {
+        border: 0px solid white;
+        background-color: #0C5697;
+        color: white;
+      }
+      
+      #group_descriptions tbody {
+        padding-bottom: 1000px;
+        margin-bottom: 1000px
+      }
+      
     "))
   ),
   
@@ -42,20 +60,28 @@ ui <- fluidPage(
   
   # Instructions row
   fluidRow(
-    h1("Title", align = "center"),
+    column(8, offset = 2,
+           h1(
+             "Pastoral Care of Migrants, Refugees, and Travelers Database", 
+             align = "center"
+           )
+          ),
     column(
       8, offset = 2, 
       h3("Instructions"),
       p(
         style="text-align: justify;",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-        laboris nisi ut aliquip ex ea commodo consequat. 
-        Duis aute irure dolor in reprehenderit in voluptate velit esse 
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-        cupidatat non proident, sunt in culpa qui officia deserunt mollit 
-        anim id est laborum."
+        'Please select your diocese or archdiocese and immigrant group of 
+        interest using the dropdown menus below. A table summarizing the 
+        characteristics of the group(s) you selected will be displayed below.
+        You can download the data using the "Download Data" button to the right.
+        For detailed descriptions of selected groups, see the bottom of the page.'
+      ),
+      h5("Source:"),
+      p(
+        style="text-align: justify;",
+        "Center for Migration Studies of New York. Calculations based on 2017 
+        1-Year American Community Survey data from the Census Bureau."
       )
     )
   ),
@@ -169,7 +195,16 @@ ui <- fluidPage(
       12, 
       tableOutput("mor_tbl"), align = "center",
     )
-  )
+  ),
+  
+  # Group descriptions row
+  fluidRow(
+    column(
+      12,
+      tableOutput("group_descriptions"),
+      align = "center"
+    )
+  ),
 )
 
 server <- function(input, output, session) {
@@ -202,17 +237,6 @@ server <- function(input, output, session) {
         "Variable" = name
       )
     
-    to_exclude_ind_occ <- c(
-      "Migrant Farmworkers",
-      "Peoples of the Sea",
-      "Traveling Show Ministeries",
-      "Civil Aviation Employees"
-    )
-    
-    if(all(input$group %in% to_exclude_ind_occ)) {
-      data <- data %>%
-        filter((Category != "Occupation") && (Category != "Industry"))
-    }
     return(data)
   })
   
@@ -234,6 +258,26 @@ server <- function(input, output, session) {
     content = function(file) {
       write.csv(selected(), file, row.names = TRUE)
     }
+  )
+  
+  # Get group description table
+  output$group_descriptions <- renderTable(
+    {
+    if(is.null(display())) {
+      return(NULL)
+    }
+    
+    group_descs %>%
+      filter(group_name %in% names(display())) %>%
+      rename(" " = group_name,
+             "Description" = description)
+    },
+    width = "80%", 
+    hover = TRUE,
+    caption = "Group Descriptions:",
+    caption.placement = getOption(
+      "xtable.caption.placement", "top"
+    )
   )
   
   # Sub-tables for displaying

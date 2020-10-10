@@ -20,7 +20,13 @@ ldata <- data %>%
     names_to = c(".value", "group_id"),
     names_sep = ("-")
   ) %>%
-  rename("diocese" = "diocese-num")
+  rename("diocese" = "diocese-num") %>%
+  mutate(yrsusa_tot = ifelse(str_detect(group_id, "child"), NA, yrsusa_tot),
+         yrsusa_catp1 = ifelse(str_detect(group_id, "child"), NA, yrsusa_catp1),
+         yrsusa_catp2 = ifelse(str_detect(group_id, "child"), NA, yrsusa_catp2),
+         yrsusa_catp3 = ifelse(str_detect(group_id, "child"), NA, yrsusa_catp3),
+         yrsusa_catp4 = ifelse(str_detect(group_id, "child"), NA, yrsusa_catp4),
+         yrsusa_catp5 = ifelse(str_detect(group_id, "child"), NA, yrsusa_catp5))
 
 saveRDS(ldata, "data/long_data.RDS")
 
