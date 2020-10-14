@@ -16,6 +16,7 @@ ui <- fluidPage(
   
   # add custom css
   tags$head(
+    tags$title("CMS Pastoral Care Database"),
     tags$style(HTML("
       tr:first-child { 
         font-weight: bold 
@@ -55,14 +56,15 @@ ui <- fluidPage(
   
   # Add title
   titlePanel(
-    column(12, img(src = "CMSlogo.jpg", width = "60%"), align = "center"),
+    column(12, img(src = "CMSlogo.jpg", width = "50%"), align = "center")
   ),
   
   # Instructions row
   fluidRow(
     column(8, offset = 2,
-           h1(
-             "Pastoral Care of Migrants, Refugees, and Travelers Database", 
+           h2(
+             "Database on Populations of Interest to the USCCB Subcommittee of 
+             Migrants, Refugees and Travelers by Archdiocese/Diocese: 2017", 
              align = "center"
            )
           ),
@@ -71,7 +73,7 @@ ui <- fluidPage(
       h3("Instructions"),
       p(
         style="text-align: justify;",
-        'Please select your diocese or archdiocese and immigrant group of 
+        'Please select the Arch/diocese/Diocese and the immigrant group of 
         interest using the dropdown menus below. A table summarizing the 
         characteristics of the group(s) you selected will be displayed below.
         You can download the data using the "Download Data" button to the right.
@@ -82,6 +84,22 @@ ui <- fluidPage(
         style="text-align: justify;",
         "Center for Migration Studies of New York. Calculations based on 2017 
         1-Year American Community Survey data from the Census Bureau."
+      ),
+      h5("Notes:"),
+      HTML(
+        "<ul>
+        <li>The American Community Survey includes all individuals residing at 
+        addresses randomly selected by the Census Bureau.</li>
+        <li>Unless otherwise noted, all categories cover all foreign-born 
+        persons.</li>
+        <li>These estimates are weighted up to reflect the US population based 
+        on individual responses to the 2018 1-year ACS data. Estimates below 
+        1000 may have a large margin of error and should be used with caution. 
+        Margins of error may be particularly high in geographies with few 
+        respondents to the American Community Survey. Correspondingly, 
+        an estimate of zero DACA recipients in a given diocese does not 
+        necessarily mean that there are no DACA recipients in that diocese.</li>
+        </ul>"
       )
     )
   ),
@@ -266,11 +284,15 @@ server <- function(input, output, session) {
     if(is.null(display())) {
       return(NULL)
     }
+      gd <- group_descs %>%
+        filter(group_name %in% names(display())) %>%
+        rename(" " = group_name,
+               "Description" = description)
+     if(nrow(gd) == 0) {
+       return(NULL) 
+     }
+      return(gd)
     
-    group_descs %>%
-      filter(group_name %in% names(display())) %>%
-      rename(" " = group_name,
-             "Description" = description)
     },
     width = "80%", 
     hover = TRUE,

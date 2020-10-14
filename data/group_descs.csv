@@ -1,11 +1,11 @@
-﻿group_name,description
+group_name,description
 Victims of Forced Migration,"This category includes persons that entered the US as refugees between 1987 and 2017. CMS derived the number of US residents who entered the country as refugees from 2017 American Community Survey (ACS) data as follows: (1) For each year from 1987 to 2017, DHS statistics were compiled for every country for (a) refugee arrivals, and (b) newly arriving lawful permanent residents (LPRs); (2) in each cell of the resulting matrix, the percentage of refugees to total arrivals was computed; (3) 2018 ACS data were compiled by country of origin and year of entry; and (4) in each cell of the matrix, the number residing in the United States in 2018 was multiplied by the percentage from (2), but only for those cells that had percentages of two-thirds or higher.  "
 Children of African Immigrants,Includes all persons born in the United States with at least one parent who was born in Africa.
 Children of Brazilian Immigrants,Includes all persons born in the United States with at least one parent who was born in Brazil.
 Children of Haitian and Caribbean Immigrants,Includes all persons born in the United States with at least one parent who was born in Haiti or elsewhere in the Caribbean
 Children of European Immigrants,Includes all persons born in the United States with at least one parent who was born in Europe
 Children of Forced Migrants,Includes all persons born in the United States with at least one parent who was born to forced migrants.
-Migrant Farmworkers,"Includes agricultural workers and first-line supervisors of farming, fishing, and forestry workers."
+Migrant Farmworkers,"Includes agricultural workers and first-line supervisors of farming, fishing, and forestry workers. Other farmworker occupations within PCMRT's rubric cannot be identified using American Community Survey data."
 Peoples of the Sea,"Includes fishing and hunting workers, sailors, marine oilers, ship engineers, ship and boat captains and operators, marine engineers, and naval architects."
-Civil Aviation Employees,"Includes aircraft pilots, flight engineers, flight attendants, air traffic controllers, airfield operations specialists, and aircraft mechanics and service technicians."
-Traveling Shows Ministries,"Includes truck drivers, locomotive engineers and operators, railroad brake, signal, and switch operators, railroad conductors, and yardmasters."
+Civil Aviation Employees,"Includes aircraft pilots, flight engineers, flight attendants, air traffic controllers, airfield operations specialists, and aircraft mechanics and service technicians. Other civil aviation occupations within PCMRT's rubric cannot be identified using American Community Survey data."
+Traveling Shows Ministries,"Includes truck drivers, locomotive engineers and operators, railroad brake, signal, and switch operators, railroad conductors, and yardmasters. These estimates do not include circus workers, performers, or race track employees, as such individuals cannot be identified using American Community Survey data."

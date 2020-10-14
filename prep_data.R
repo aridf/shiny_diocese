@@ -8,7 +8,7 @@ data <- read_excel("data/USCCB.xlsx")
 grp <- read_csv("data/groups.csv")
 vars <- read_csv("data/vars.csv")
 
-vis_miss(ldata)
+#vis_miss(ldata)
 
 names(data) <- gsub("_child", "child", names(data))
 names(data) <- stri_replace_last_fixed(names(data), "_", "-")
@@ -27,6 +27,10 @@ ldata <- data %>%
          yrsusa_catp3 = ifelse(str_detect(group_id, "child"), NA, yrsusa_catp3),
          yrsusa_catp4 = ifelse(str_detect(group_id, "child"), NA, yrsusa_catp4),
          yrsusa_catp5 = ifelse(str_detect(group_id, "child"), NA, yrsusa_catp5))
+
+ldata <- ldata %>%
+  mutate(cit_catp4 = ifelse(str_detect(group_id, "child"), NA, cit_catp1),
+         cit_catp1 = ifelse(str_detect(group_id, "child"), cit_catp1, NA))
 
 saveRDS(ldata, "data/long_data.RDS")
 

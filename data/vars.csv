@@ -1,4 +1,4 @@
-﻿var,grouping,name
+var,grouping,name
 yrsusa_tot,Years in USA,Total
 yrsusa_catp1,Years in USA,Less than 5 years
 yrsusa_catp2,Years in USA,5 to 9 years
@@ -17,13 +17,14 @@ cit_tot,Citizenship,Total respondents
 cit_catp1,Citizenship,US-born citizen
 cit_catp2,Citizenship,Naturalized citizen
 cit_catp3,Citizenship,Not a citizen
+cit_catp4,Citizenship,"US citizen, born abroad to US citizen parents"
 citech_cat,Technology Access,Access to internet
 male,Gender,Male
 female,Gender,Female
 marst_tot,Marital Status,"Total, married"
-marst_catp1,Marital Status,Married to American
+marst_catp1,Marital Status,Married to a US citizen
 marst_catp2,Marital Status,Married to legal noncitizen
-marst_catp3,Marital Status,Married to unauthorized
+marst_catp3,Marital Status,Married to unauthorized immigrant
 speakeng_tot,Level of English Proficiency,"Total, Age 5 and over"
 speakeng_catp1,Level of English Proficiency,Does not speak English
 speakeng_catp2,Level of English Proficiency,Speaks English a little
