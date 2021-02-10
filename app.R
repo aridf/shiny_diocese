@@ -72,6 +72,16 @@ ui <- fluidPage(
       8, offset = 2, 
       h3("Instructions"),
       p(
+        'Before using this tool, please download and read the detailed instructions
+        ', 
+        a(
+          href = 'PCMRT Methodology and Description2-5-21.pdf', 
+          "here",
+          download = NA,
+          target = '_blank'
+        )
+      ),
+      p(
         style="text-align: justify;",
         'Please select the Arch/diocese and the immigrant group of 
         interest using the dropdown menus below. A table summarizing the 
