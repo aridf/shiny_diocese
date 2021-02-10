@@ -72,14 +72,15 @@ ui <- fluidPage(
       8, offset = 2, 
       h3("Instructions"),
       p(
-        'Before using this tool, please download and read the detailed instructions
-        ', 
+        'Before using this tool, please',
         a(
           href = 'PCMRT Methodology and Description2-5-21.pdf', 
-          "here",
+          "click here",
           download = NA,
           target = '_blank'
-        )
+        ),
+        'to download and read a detailed description of the data that it uses 
+        and how to interpret it.'
       ),
       p(
         style="text-align: justify;",
