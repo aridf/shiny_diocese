@@ -73,33 +73,11 @@ ui <- fluidPage(
       h3("Instructions"),
       p(
         style="text-align: justify;",
-        'Please select the Arch/diocese/Diocese and the immigrant group of 
+        'Please select the Arch/diocese and the immigrant group of 
         interest using the dropdown menus below. A table summarizing the 
         characteristics of the group(s) you selected will be displayed below.
         You can download the data using the "Download Data" button to the right.
         For detailed descriptions of selected groups, see the bottom of the page.'
-      ),
-      h5("Source:"),
-      p(
-        style="text-align: justify;",
-        "Center for Migration Studies of New York. Calculations based on 2017 
-        1-Year American Community Survey data from the Census Bureau."
-      ),
-      h5("Notes:"),
-      HTML(
-        "<ul>
-        <li>The American Community Survey includes all individuals residing at 
-        addresses randomly selected by the Census Bureau.</li>
-        <li>Unless otherwise noted, all categories cover all foreign-born 
-        persons.</li>
-        <li>These estimates are weighted up to reflect the US population based 
-        on individual responses to the 2018 1-year ACS data. Estimates below 
-        1000 may have a large margin of error and should be used with caution. 
-        Margins of error may be particularly high in geographies with few 
-        respondents to the American Community Survey. Correspondingly, 
-        an estimate of zero DACA recipients in a given diocese does not 
-        necessarily mean that there are no DACA recipients in that diocese.</li>
-        </ul>"
       )
     )
   ),
@@ -121,6 +99,33 @@ ui <- fluidPage(
       align = "center"
     ),
     column(2, downloadButton("downloadData", "Download Data"), align = "center")
+  ),
+  
+  # Notes row
+  fluidRow(
+    column(8, offset = 2,
+      h5("Notes:"),
+      HTML(
+        "<ul>
+        <li>The American Community Survey includes all individuals residing at 
+        addresses randomly selected by the Census Bureau.</li>
+        <li>Unless otherwise noted, the categories cover foreign-born persons.
+        </li>
+        <li>Estimates below 1000 may have a large margin of error and should be 
+        used with caution. Margins of error may be particularly high in 
+        geographies with few respondents to the American Community Survey. 
+        Correspondingly, an estimate of zero immigrants in a given diocese 
+        does not necessarily mean that there are no immigrants in that 
+        diocese.</li>
+        </ul>"
+      ),
+      h5("Source:"),
+      p(
+        style="text-align: justify;",
+        "Center for Migration Studies of New York. Calculations based on 2017 
+        1-Year American Community Survey data from the Census Bureau."
+      )
+    )
   ),
   
   # Output rows
