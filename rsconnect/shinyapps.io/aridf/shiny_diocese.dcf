@@ -5,6 +5,6 @@ account: aridf
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2956272
-bundleId: 4205761
+bundleId: 4205783
 url: https://aridf.shinyapps.io/shiny_diocese/
-when: 1612964558.18898
+when: 1612964867.64806
